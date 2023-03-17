@@ -28,7 +28,7 @@ class NotificationHandler extends Controller
             curl_setopt($ch, CURLOPT_POSTFIELDS, '{"to": "' . $devicetoken . '","notification": {"title": "' . $title . '","body":"' . $body . '","mutable_content": true,"sound": "Tri-tone"},"priority":"high"}');
 
             $headers = array();
-            $headers[] = 'Authorization: key=AAAALg_Cu_w:APA91bEBddAmUIw1Ov-3fLKU8vNmxB1IRKCv14jwYA9OdSjq09amX7tka2BZdysKkO_iY_TATx5xbFzwRp8bv9jht8PxbsThMncJA9fIXLTQHaAtn-zitMS8XNYNO7NNe0v0D4usIV1Z';
+            $headers[] = 'Authorization: key=' . env('FIREBASE_SERVER_KEY');
             $headers[] = 'Content-Type: application/json';
             $headers[] = 'Cache-Control: no-cache';
             curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
