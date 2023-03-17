@@ -13,5 +13,8 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
+        '/device/notification/send',
+        '/device/token/get',
+        '/device/token/register',
     ];
 }
